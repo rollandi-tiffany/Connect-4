@@ -3,8 +3,8 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
+
+  Table of Contents
   <ol>
     <li>
       <a href="#connect-4">Connect 4</a>
