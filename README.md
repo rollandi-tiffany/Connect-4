@@ -81,6 +81,7 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- Wire Frames -->
 ## Wire Frames
 
+![**Project 1 Wireframe**](images/wireframe.jpeg)
 - [x] Add Changelog
 - [x] Add back to top links
 - [ ] Add Additional Templates w/ Examples
