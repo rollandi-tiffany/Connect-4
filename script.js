@@ -1,1 +1,4 @@
-console.log("Connect 4 is the Best!")
+$(document).ready(function(){
+    const $circle = $(".circle");
+   
+})
