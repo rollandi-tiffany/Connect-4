@@ -5,12 +5,9 @@ body {
 
 #upperbox {
     text-align: center;
-    border: 10px solid darkblue;
     margin: 30px;
     color: red;
     font-size: 30px;
-    background: darkblue;
-    
 }
 
 #field {
@@ -35,4 +32,8 @@ body {
     border-radius: 50px;
     
 
+}
+
+.circle:hover {
+    background-color: red;
 }
