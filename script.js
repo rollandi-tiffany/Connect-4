@@ -13,7 +13,7 @@ $(document).ready(function(){
         count++;
 
         $(this).click(function(){
-            if(isValid($(this).attr("id"))){
+            if(isCircleFilled($(this).attr("id"))){
                 $(this).css("background-color", colors[player]);
                 $(this).attr("data-player", player);
              
@@ -21,7 +21,22 @@ $(document).ready(function(){
 
             }
 
-            //function isValid
+            function isCircleFilled(x){
+                let id = parseInt (x);
+                
+                if($("#" + id).attr("data-player") !=="0"){
+                    return true;
+                }
+                if(id >=35){
+                    return false;
+                }
+                if($("#" + (id + 7)).attr("data-player") !=="0"){
+                    return false;
+                }
+                return false;
+            }
+
+
 
         })
 
