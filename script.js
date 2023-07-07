@@ -64,7 +64,7 @@ $(document).ready(function(){
             for(let r = 0; r < 42; r += 7){
                 for(let c = 0; c < 7; c++){
                     let circle = $("#" + (r + c));
-                    if( circle.attr("data-player") === p.toString()){
+                    if(circle.attr("data-player") === p.toString()){
                         link ++;
                     }else{
                         link = 0;
@@ -75,6 +75,22 @@ $(document).ready(function(){
                 }
                 link = 0;
             }
+        
+            for(let c = 0; c < 7; c++){
+                for(let r = 0; r < 42; r += 7){
+                    let circle = $("#" + (r + c));
+                    if(circle.attr("data-player") === p.toString()){
+                        link++;
+                    }else{
+                        link = 0;
+                    }
+                    if(link >= 4){
+                        return true;
+                    }
+                }
+                link = 0;
+            }
+            return false;
 
         }  
 
