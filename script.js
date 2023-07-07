@@ -41,7 +41,7 @@ $(document).ready(function(){
                     //}
                 //})
             //}
-
+//checking to see if circle is filled by red or yellow disc
             function isCircleFilled(x){
                 let id = parseInt (x);
                 if(winner !== 0){
@@ -59,13 +59,14 @@ $(document).ready(function(){
                 }
                 return false;
             }
+//checking if the players make a horizontal or vertical win
         function checkWinner(p){
             let link = 0;
             for(let r = 0; r < 42; r += 7){
                 for(let c = 0; c < 7; c++){
                     let circle = $("#" + (r + c));
                     if(circle.attr("data-player") === p.toString()){
-                        link ++;
+                       link ++;
                     }else{
                         link = 0;
                     }
@@ -76,23 +77,59 @@ $(document).ready(function(){
                 link = 0;
             }
         
-            for(let c = 0; c < 7; c++){
-                for(let r = 0; r < 42; r += 7){
-                    let circle = $("#" + (r + c));
+            for(let r = 0; r < 7; r++){
+                for(let c = 0; c < 42; c += 7){
+                   let circle = $("#" + (r + c));
                     if(circle.attr("data-player") === p.toString()){
-                        link++;
+                       link++;
                     }else{
                         link = 0;
-                    }
+                   }
                     if(link >= 4){
-                        return true;
+                       return true;
                     }
                 }
                 link = 0;
             }
-            return false;
+ // checking if players make a diagonal win from top-left to bottom-right or top-right to bottom-left           
+            for (let r = 0; r <=21; r += 7){
+                for (let c = 0; c <= 3; c++){
+                    let circle1 = $("#" + (r +c));
+                    let circle2 = $("#" + (r + c + 8));
+                    let circle3 = $("#" + (r + c + 16));
+                    let circle4 = $("#" + (r + c + 24));
+
+                    if (
+                        circle1.attr("data-player") === p.toString()&&
+                        circle2.attr("data-player") === p.toString()&&
+                        circle3.attr("data-player") === p.toString()&&
+                        circle4.attr("data-player") === p.toString()
+                    ){
+                        return true;
+                    }
+                }
+            }
+
+            for(let r = 0; r <= 21; r += 7){
+                for (let c = 6; c >= 3; c--){
+                    let circle1 = $("#" + (r + c));
+                    let circle2 = $("#" + (r + c + 6));
+                    let circle3 = $("#" + (r + c + 12));
+                    let circle4 = $("#" + (r + c +18));
+
+                    if(
+                        circle1.attr("data-player") === p.toString()&&
+                        circle2.attr("data-player") === p.toString()&&
+                        circle3.attr("data-player") === p.toString()&&
+                        circle4.attr("data-player") === p.toString()
+                    )
+                        return true;
+
+                }
+            }
 
         }  
+        return false;
 
         })
 

@@ -46,14 +46,14 @@ This is a game made from HTML, JS, CSS and jQuery that is similiar to Connect 4.
 
 <!-- GETTING STARTED -->
 ## Approach Taken
-I began by setting up HTML, CSS and Javascript files. I then rendered a page to display the board game. I introduced the idea of having two players with preassigned discs (Player 1= red, Player 2= yellow). I allowed Player 1 to start the game by clicking on a column to drop the first disc. I then allowed Player 2 to drop their disc in any column after Player 1. I allowed both players the ability to either block the other player's moves or try to create their own path to connect four in a row and win the game.
+I began by setting up HTML, CSS and Javascript files. I then rendered a page to display the board game. I introduced the idea of having two players with preassigned discs (Player 1= red, Player 2= yellow). I allowed Player 1 to start the game by clicking on a column to drop the first disc. I then allowed Player 2 to drop their disc in any column after Player 1. I allowed both players the ability to either block the other player's moves or try to create their own path to connect four in a row and win the game. I also added a "restart" button to allow players to play the game as many times as desired. 
 
 
   
 
 ## Installation
 
-Download and play the game in your browser. It is a 2 player game.
+Download and play the game in your browser. It is a 2 player game. Then hit "restart" to play again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
