@@ -9,7 +9,19 @@ $(document).ready(function(){
     colors[1] = "yellow";
     //let API_KEY = ;
 
-    const $restartButton = $("#restart");
+    $("#restart").click(function(){
+        clearBoard();
+    });
+
+    function clearBoard(){
+        $(".circle").each(function(){
+            $(this).attr("data-player", 0);
+            $(this).css("background-color", "white");
+
+            winner = 0;
+
+        })
+    }
 
     $(".circle").each(function(){
         $(this).attr("id", count);
