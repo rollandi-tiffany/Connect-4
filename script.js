@@ -7,7 +7,8 @@ $(document).ready(function(){
     let colors = {};
     colors[-1] = "red";
     colors[1] = "yellow";
-    //let API_KEY = ;
+   
+    
 
     $("#restart").click(function(){
         clearBoard();
@@ -22,6 +23,7 @@ $(document).ready(function(){
 
         })
     }
+    
 
     $(".circle").each(function(){
         $(this).attr("id", count);
@@ -29,15 +31,37 @@ $(document).ready(function(){
         count++;
 
         $(this).click(function(){
+            console.log($(this).attr("id"));
             if(isCircleFilled($(this).attr("id"))){
                 $(this).css("background-color", colors[player]);
                 $(this).attr("data-player", player);
                 if(checkWinner(player)){
-                    alert("Congratulations " + colors[player] + " you win!");
-                    //fetchData();
-                    winner = player;
+                    //alert("Congratulations " + colors[player] + " you win!");
+                    const $button = $("button");
+
+                $button.click((e) => {
+                    $.ajax({
+                        url:"https://api.thecatapi.com/v1/images/search?limit=10"
+                    }).then(function (date){
+                        console.log(date);
+                        addImageToScreen(data[0].url);
+                        $button.off();
+                    });
+                });
+                let addImageToScreen = (image) => {
+                    let $li = $(`<img src="${image}"alt="some image"/>`);
+
+        
 
                 }
+                   
+                    winner = player;
+
+
+            
+
+                }
+                
 
                 player *= -1;
              
@@ -45,14 +69,8 @@ $(document).ready(function(){
 
             }
 
-           // function fetchData(){
-                //const url = "https://api.thecatapi.com/v1/images/search?limit=10";
-               // fetch(url, {
-                 //   headers: {
-                    //    "Authorization": ""
-                    //}
-                //})
-            //}
+
+        
 //checking to see if circle is filled by red or yellow disc
             function isCircleFilled(x){
                 let id = parseInt (x);
@@ -63,11 +81,11 @@ $(document).ready(function(){
                 if($("#" + id).attr("data-player") ==="0"){
                     return true;
                 }
-                if(id >=35){
+                if(id >=42){
                     return true;
                 }
-                if($("#" + (id + 7)).attr("data-player") !== 0){
-                    return true;
+                if($("#" + (id + 7)).attr("data-player") === 0){
+                    return false;
                 }
                 return false;
             }
@@ -87,6 +105,7 @@ $(document).ready(function(){
                     }
                 }
                 link = 0;
+
             }
         
             for(let r = 0; r < 7; r++){
