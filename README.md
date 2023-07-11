@@ -36,9 +36,8 @@ Connect 4 is a game that is played by two players. Players choose between yellow
 
 ### Built With
 
-This is a game made from HTML, JS, CSS and jQuery that is similiar to Connect 4. 
-
-
+This is a game made from HTML, JS, CSS and jQuery that is similiar to Connect 4. I used Trello to keep track of the steps I had to do, was currently working on and had done. 
+![**Project 1 Trello**](images/trello.jpeg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
