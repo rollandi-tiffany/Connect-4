@@ -39,6 +39,7 @@ $(document).ready(function () {
             if (checkWinner(player)) {
                 displayWinner(player);
                 gameFinished = true;
+              
                 return;
             }
 
@@ -140,6 +141,8 @@ $(document).ready(function () {
         const color = colors[player];
         const message = "Congratulations " + color + ", you win!";
         displayResult.innerText = message;
+       
+       
 
         $.ajax({
             url: "https://api.thecatapi.com/v1/images/search?limit=10",
@@ -147,6 +150,8 @@ $(document).ready(function () {
             .then(function (data) {
                 console.log(data);
                 addImageToScreen(data[0].url);
+                
+ 
             })
             .catch(function (error) {
                 console.log("Error:", error);
@@ -156,6 +161,8 @@ $(document).ready(function () {
     function addImageToScreen(imageUrl) {
         const $img = $('<img src="' + imageUrl + '" alt="Cat Image">');
         displayResult.appendChild($img[0]);
+
+        
     }
 });
 

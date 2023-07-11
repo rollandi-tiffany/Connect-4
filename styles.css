@@ -46,4 +46,17 @@ body {
     text-transform: uppercase;
 }
 
+.img {
+    border-radius: 10px;
+    border: 10px solid white;
+    padding: 5px;
+    max-width: 50%;
+    width: 50%;
+    display: center;
+    text-align: center;
+    
+}
+
+
+
 
